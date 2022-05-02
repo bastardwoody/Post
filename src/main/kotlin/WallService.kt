@@ -2,7 +2,7 @@ class WallService {
     private var posts = emptyArray<Post>()
 
     fun addPost(post: Post): Post {
-//        post.id = kotlin.math.abs(post.hashCode())
+        post.id = kotlin.math.abs(post.hashCode())
         posts += post
         return posts.last()
     }
