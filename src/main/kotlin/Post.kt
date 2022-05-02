@@ -1,7 +1,5 @@
-import java.util.*
-
 data class Post(
-    val id: UUID = UUID.randomUUID(),
+    var id: Int,
     val ownerId: Int = (0..999).random(),
     val fromId: Int = (0..999).random(),
     val createdBy: Int = (0..999).random(),
