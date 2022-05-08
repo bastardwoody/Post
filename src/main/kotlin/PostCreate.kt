@@ -1,19 +1,19 @@
 fun main() {
 
-    val q = WallService()
+    val wallService = WallService()
 
-    val post1 = Post(111)
-    val post2 = Post(222)
-    val post3 = Post(333)
+    val post1 = Post()
+    val post2 = Post()
+    val post3 = Post()
 
-    q.addPost(post1)
-    q.addPost(post2)
-    q.addPost(post3)
+    wallService.addPost(post1)
+    wallService.addPost(post2)
+    wallService.addPost(post3)
 
-    q.showPosts()
+    wallService.showPosts()
     println()
 
-    q.updatePost(post3)
+    wallService.updatePost(post1)
 
-    q.showPosts()
+    wallService.showPosts()
 }

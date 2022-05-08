@@ -7,120 +7,265 @@ class WallServiceTest {
     fun addPost() {
         // arrange
         val service = WallService()
-        val post = Post(
-            id = 111,
-            ownerId = 3648,
-            fromId = 13123,
-            createdBy = 157664,
-            date = 32635472,
-            text = "Bay",
-            replyOwnerId = 15675,
-            replyPostId = 16867,
+        val post = service.addPost(Post(
+            id = null,
+            ownerId = 384,
+            fromId = 243,
+            createdBy = 346,
+            date = 1739,
+            text = "Good",
+            replyOwnerId = 243,
+            replyPostId = 707,
             friendsOnly = false,
-            postType = "Next",
-            signerId = 19757477,
+            comments = Comments(
+                93,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                98,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                83,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                21,
+                false
+            ),
+            views = Views(
+                47
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 75,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 156478
-        )
-        service.addPost(post)
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 432,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 2465
+        ))
 
         // act
         val result = post.id
 
         // assert
-        assertEquals(307508243, result)
+        assertEquals(1062117592, result)
     }
 
     @Test
     fun updatePostTrue() {
         // arrange
         val service = WallService()
-        service.addPost(Post(
-            id = 111,
-            ownerId = 3648,
-            fromId = 13123,
-            createdBy = 157664,
-            date = 32635472,
-            text = "Bay",
-            replyOwnerId = 15675,
-            replyPostId = 16867,
-            friendsOnly = false,
-            postType = "Next",
-            signerId = 19757477,
-            canPin = true,
-            canDelete = false,
-            canEdit = false,
-            isPinned = false,
-            markedAsAds = false,
-            isFavorite = false,
-            postponedId = 156478
-        ))
-        service.addPost(Post(
-            id = 222,
-            ownerId = 1542,
-            fromId = 4564,
-            createdBy = 342,
-            date = 678,
+        val post1 = service.addPost(Post(
+            id = null,
+            ownerId = 384,
+            fromId = 243,
+            createdBy = 346,
+            date = 1739,
             text = "Good",
-            replyOwnerId = 4243,
-            replyPostId = 908,
+            replyOwnerId = 243,
+            replyPostId = 707,
             friendsOnly = false,
-            postType = "Go",
-            signerId = 546323,
+            comments = Comments(
+                93,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                98,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                83,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                21,
+                false
+            ),
+            views = Views(
+                47
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 75,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 4565675
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 432,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 2465
         ))
-        service.addPost(Post(
-            id = 333,
-            ownerId = 2321,
-            fromId = 657,
-            createdBy = 34,
-            date = 676,
-            text = "Wow",
-            replyOwnerId = 54643,
-            replyPostId = 454,
+        val post2 = service.addPost(Post(
+            id = null,
+            ownerId = 508,
+            fromId = 343,
+            createdBy = 496,
+            date = 454,
+            text = "Good",
+            replyOwnerId = 2340,
+            replyPostId = 78,
             friendsOnly = false,
-            postType = "Back",
-            signerId = 5675,
+            comments = Comments(
+                13,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                83,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                80,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                220,
+                false
+            ),
+            views = Views(
+                367
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 78,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 234
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 52,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 94
         ))
-        val update = Post(
-            id = 307508243,
-            fromId = 4343,
-            createdBy = 231,
-            text = "Bad",
-            replyOwnerId = 675,
-            replyPostId = 89,
+        val post3 = service.addPost(Post(
+            id = null,
+            ownerId = 564,
+            fromId = 43,
+            createdBy = 300,
+            date = 949,
+            text = "Good",
+            replyOwnerId = 293,
+            replyPostId = 277,
             friendsOnly = false,
-            postType = "Ugly",
-            signerId = 345,
+            comments = Comments(
+                193,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                118,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                808,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                221,
+                false
+            ),
+            views = Views(
+                567
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 790,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 1240
-        )
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 63,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 45
+        ))
 
         // act
-        val result = service.updatePost(update)
+        val result = service.updatePost(post1)
 
         // assert
         assertTrue(result)
@@ -130,87 +275,252 @@ class WallServiceTest {
     fun updatePostFalse() {
         // arrange
         val service = WallService()
-        service.addPost(Post(
-            id = 111,
-            ownerId = 3648,
-            fromId = 13123,
-            createdBy = 157664,
-            date = 32635472,
-            text = "Bay",
-            replyOwnerId = 15675,
-            replyPostId = 16867,
-            friendsOnly = false,
-            postType = "Next",
-            signerId = 19757477,
-            canPin = true,
-            canDelete = false,
-            canEdit = false,
-            isPinned = false,
-            markedAsAds = false,
-            isFavorite = false,
-            postponedId = 156478
-        ))
-        service.addPost(Post(
-            id = 222,
-            ownerId = 1542,
-            fromId = 4564,
-            createdBy = 342,
-            date = 678,
+        val post1 = service.addPost(Post(
+            id = null,
+            ownerId = 384,
+            fromId = 243,
+            createdBy = 346,
+            date = 1739,
             text = "Good",
-            replyOwnerId = 4243,
-            replyPostId = 908,
+            replyOwnerId = 243,
+            replyPostId = 707,
             friendsOnly = false,
-            postType = "Go",
-            signerId = 546323,
+            comments = Comments(
+                93,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                98,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                83,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                21,
+                false
+            ),
+            views = Views(
+                47
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 75,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 4565675
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 432,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 2465
         ))
-        service.addPost(Post(
-            id = 333,
-            ownerId = 2321,
-            fromId = 657,
-            createdBy = 34,
-            date = 676,
-            text = "Wow",
-            replyOwnerId = 54643,
-            replyPostId = 454,
+        val post2 = service.addPost(Post(
+            id = null,
+            ownerId = 508,
+            fromId = 343,
+            createdBy = 496,
+            date = 454,
+            text = "Good",
+            replyOwnerId = 2340,
+            replyPostId = 78,
             friendsOnly = false,
-            postType = "Back",
-            signerId = 5675,
+            comments = Comments(
+                13,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                83,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                80,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                220,
+                false
+            ),
+            views = Views(
+                367
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 78,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 234
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 52,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 94
         ))
-        val update = Post(
-            id = 11,
-            fromId = 4343,
-            createdBy = 231,
-            text = "Bad",
-            replyOwnerId = 675,
-            replyPostId = 89,
+        val post3 = service.addPost(Post(
+            id = null,
+            ownerId = 564,
+            fromId = 43,
+            createdBy = 300,
+            date = 949,
+            text = "Good",
+            replyOwnerId = 293,
+            replyPostId = 277,
             friendsOnly = false,
-            postType = "Ugly",
-            signerId = 345,
+            comments = Comments(
+                193,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                118,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                808,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                221,
+                false
+            ),
+            views = Views(
+                567
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 790,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = false,
             canEdit = false,
             isPinned = false,
             markedAsAds = false,
             isFavorite = false,
-            postponedId = 1240
-        )
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 63,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 45
+        ))
 
         // act
-        val result = service.updatePost(update)
+        val result = service.updatePost(Post(
+            id = 43254648,
+            ownerId = 564,
+            fromId = 43,
+            createdBy = 300,
+            date = 949,
+            text = "Good",
+            replyOwnerId = 293,
+            replyPostId = 277,
+            friendsOnly = false,
+            comments = Comments(
+                193,
+                true,
+                true,
+                true,
+                false
+            ),
+            copyright = Copyright(
+                118,
+                "https://netology.ru/",
+                "Нетология",
+                "XZ"
+            ),
+            likes = Likes(
+                808,
+                true,
+                true,
+                true
+            ),
+            reposts = Reposts(
+                221,
+                false
+            ),
+            views = Views(
+                567
+            ),
+            postType = "Bad",
+            postSource = PostSource(),
+            attachments = emptyArray(),
+            geo = Geo(
+                type = "GPS",
+                coordinates = "76.78757, 34.35790",
+                place = Geo.Place()
+            ),
+            signerId = 790,
+            copyHistory = emptyArray(),
+            canPin = true,
+            canDelete = false,
+            canEdit = false,
+            isPinned = false,
+            markedAsAds = false,
+            isFavorite = false,
+            donut = Donut(
+                isDonut = true,
+                paidDuration = 63,
+                placeHolder = Any(),
+                canPublishFreeCopy = true,
+                editMode = "duration",
+            ),
+            postponedId = 45
+        ))
 
         // assert
         assertFalse(result)
