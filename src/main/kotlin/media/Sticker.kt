@@ -1,3 +1,5 @@
+package media
+
 class Sticker(
     val productId: Int,
     val stickerId: Int,

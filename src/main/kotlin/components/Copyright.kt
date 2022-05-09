@@ -1,3 +1,5 @@
+package components
+
 class Copyright(
     val id: Int,
     val link: String,

@@ -1,3 +1,7 @@
+package attachments
+
+import media.Graffiti
+
 class GraffitiAttachment(
     val graffiti: Graffiti,
 ) : Attachments {

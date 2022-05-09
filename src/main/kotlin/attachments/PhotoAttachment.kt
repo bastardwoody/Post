@@ -1,3 +1,7 @@
+package attachments
+
+import media.Photo
+
 class PhotoAttachment(
     val photo: Photo,
 ) : Attachments {

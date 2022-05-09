@@ -1,3 +1,5 @@
+package components
+
 class Geo(
     val type: String,
     val coordinates: String,

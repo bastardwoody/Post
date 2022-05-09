@@ -1,3 +1,5 @@
+package media
+
 class Photo(
     val id: Int,
     val albumId: Int,

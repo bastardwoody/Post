@@ -1,3 +1,5 @@
+package components
+
 class Likes(
     val count: Int,
     val userLikes: Boolean,

@@ -1,3 +1,5 @@
+package media
+
 class Graffiti(
     val id: Int,
     val ownerId: Int,

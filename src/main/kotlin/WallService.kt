@@ -1,5 +1,11 @@
+import components.*
+import exceptions.ComplaintException
+import exceptions.PostNotFoundException
+
 class WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
+    private var reports = emptyArray<ReportComment>()
 
     fun addPost(post: Post): Post {
         post.id = kotlin.math.abs(post.hashCode())
@@ -21,30 +27,30 @@ class WallService {
                     replyPostId = 707,
                     friendsOnly = false,
                     comments = Comments(
-                        93,
-                        true,
-                        true,
-                        true,
-                        false
+                        count = 93,
+                        canPost = false,
+                        groupsCanPost = true,
+                        canClose = true,
+                        canOpen = true,
                     ),
                     copyright = Copyright(
-                        98,
-                        "https://netology.ru/",
-                        "Нетология",
-                        "XZ"
+                        id = 98,
+                        link = "https://netology.ru/",
+                        name = "",
+                        type = "XZ"
                     ),
                     likes = Likes(
-                        83,
-                        true,
-                        true,
-                        true
+                        count = 83,
+                        userLikes = true,
+                        canLike = false,
+                        canPublish = true,
                     ),
                     reposts = Reposts(
-                        21,
-                        false
+                        count = 21,
+                        userReposted = true,
                     ),
                     views = Views(
-                        47
+                        count = 47
                     ),
                     postType = "Bad",
                     postSource = PostSource(),
@@ -77,10 +83,27 @@ class WallService {
         return false
     }
 
-    // ПОКАЗ ВСЕХ ПОСТОВ
-    fun showPosts() {
+    fun createComment(comment: Comment): Comment {
         for ((index) in posts.withIndex()) {
-            println(posts[index])
+            if (posts[index].id == comment.postId) {
+                comments += comment
+                return comments.last()
+            }
         }
+        throw PostNotFoundException("Пост ${comment.postId} не найден")
+    }
+
+    fun complaint(comment: Comment, reason: Reasons): ReportComment {
+        for ((index) in comments.withIndex()) {
+            if (comments[index].postId == comment.postId) {
+                reports += ReportComment(
+                    comment.ownerId,
+                    comment.postId,
+                    reason
+                )
+                return reports.last()
+            }
+        }
+        throw ComplaintException("Комментарий не найден")
     }
 }

@@ -1,3 +1,7 @@
+package attachments
+
+import media.Audio
+
 class AudioAttachment(
     val audio: Audio,
 ) : Attachments {

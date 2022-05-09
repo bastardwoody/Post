@@ -1,5 +1,8 @@
+import attachments.Attachments
+import components.*
+
 data class Post(
-    var id: Int? = null,
+    var id: Int = 0,
     val ownerId: Int = (0..99).random(),
     val fromId: Int = (0..99).random(),
     val createdBy: Int = (0..99).random(),
@@ -21,18 +24,24 @@ data class Post(
         name = "NONAME",
         type = "site",
     ),
-    val likes: Likes? = listOf(null, Likes(
-        4,
-        true,
-        false,
-        false)
+    val likes: Likes? = listOf(
+        null,
+        Likes(
+            count = (0..99).random(),
+            userLikes = true,
+            canLike = true,
+            canPublish = true
+        )
     ).random(),
     val reposts: Reposts = Reposts(
         count = (0..99).random(),
         userReposted = true,
     ),
-    val views: Views? = listOf(null, Views(
-        (0..99).random())
+    val views: Views? = listOf(
+        null,
+        Views(
+            count = (0..99).random()
+        )
     ).random(),
     val postType: String = listOf("Good", "Bad", "Ugly").random(),
     val postSource: PostSource = PostSource(),
